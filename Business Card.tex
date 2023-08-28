@@ -1,0 +1,55 @@
+\documentclass[letterpaper,10pt]{article}
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage{fontawesome}
+\usepackage{xcolor}
+
+% Define some colors
+\definecolor{grey}{rgb}{0.5,0.5,0.5}
+
+% Set page size and margins for business cards
+\geometry{
+  letterpaper,
+  top=1cm,
+  bottom=1cm,
+  left=1cm,
+  right=1cm,
+  noheadfoot
+}
+
+\pagestyle{empty} % This line removes the page number
+
+\newcommand{\businesscard}{
+  \begin{tikzpicture}
+    % Define card dimensions
+    \def\cardwidth{8.5cm}
+    \def\cardheight{5.5cm}
+
+    % Draw the card with dotted lines
+    \draw[dotted] (0,0) rectangle (\cardwidth,\cardheight);
+    % Draw a smaller thick black line inside
+    \draw[line width=1pt] (0.2cm,0.2cm) rectangle (\cardwidth-0.2cm,\cardheight-0.2cm);
+    
+    % Add content
+    \node[anchor=center, align=center] at (\cardwidth/2, \cardheight/2 + 1.2cm) {\LARGE Alexander Baker};
+    \node[anchor=center, align=center] at (\cardwidth/2, \cardheight/2 + 0.5cm) {\large Director of Data Analytics};
+    \node[anchor=center, align=center] at (\cardwidth/2, \cardheight/2 - 0cm) {\small IWU - National \& Global};
+    \node[anchor=center, align=center] at (\cardwidth/2, \cardheight/2 - 0.75cm) {\textcolor{grey}{\faMapMarker} \small 2050 Ruckle St, Indianapolis, IN 46202};
+    \node[anchor=center, align=center] at (\cardwidth/2, \cardheight/2 - 1.25cm) {\textcolor{grey}{\faEnvelope} \small alexander.l.baker@outlook.com};
+    \node[anchor=center, align=center] at (\cardwidth/2, \cardheight/2 - 1.75cm) {\textcolor{grey}{\faPhone} \small +1 (317) 205-7608};
+  \end{tikzpicture}
+}
+
+\begin{document}
+
+\noindent
+\businesscard\hspace{1cm}\businesscard\par
+\vspace{0.5cm}
+\foreach \row in {2,3,4} {
+    \noindent\businesscard\hspace{1cm}\businesscard\par
+    \ifnum\row<4
+        \vspace{0.5cm}
+    \fi
+}
+
+\end{document}
