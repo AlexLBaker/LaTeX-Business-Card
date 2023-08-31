@@ -1,7 +1,7 @@
 # LaTeX-Business-Card
 
-Thanks for checking out this project, I hope you find it useful for your endeavors.
+Thanks for checking out this project, I appreciate you, and I hope it's what you needed!
 
-Best of luck,
+Best regards and wishes,
 
 Alexander Baker.
